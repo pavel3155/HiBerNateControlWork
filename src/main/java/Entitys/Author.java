@@ -12,15 +12,15 @@ public class Author {
     @Column(name = "id")
     int id;
     @Column(name = "author")
-    String type;
+    String author;
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
     List<Book> books = new ArrayList<>();
 
     public Author() {
     }
 
-    public Author(String type) {
-        this.type = type;
+    public Author(String author) {
+        this.author = author;
     }
 
     public int getId() {
@@ -31,12 +31,12 @@ public class Author {
         this.id = id;
     }
 
-    public String getType() {
-        return type;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public List<Book> getCars() {
@@ -51,8 +51,9 @@ public class Author {
     public String toString() {
         return "Author{" +
                 "id=" + id +
-                ", type='" + type + '\'' +
+                ", author='" + author + '\'' +
                 '}';
     }
+
 }
 
